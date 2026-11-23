@@ -1,0 +1,19 @@
+
+
+li{
+   
+    list-style: none;
+    color: rgb(181, 181, 210);
+
+}
+.header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15%;
+}
+ul{
+    display: flex;
+   
+}
+
