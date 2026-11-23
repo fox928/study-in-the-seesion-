@@ -1,0 +1,23 @@
+body{
+   background-image: linear-gradient( 135deg, #FD6585 10%, #0D25B9 100%);
+}
+
+.changecocler{
+    color: brown;
+}
+.inputs {
+
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+}
+.btn-js{
+    color: antiquewhite;
+
+}
+.btn-dark{
+
+    margin-left:1%;
+}

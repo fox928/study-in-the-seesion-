@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>شرح دوال البحث في JavaScript</title>
+  <link rel="stylesheet" href="styleshearch.css" />
+</head>
+<body>
+
+  <div class="container">
+    <h1>شرح دوال البحث والتصفية في JavaScript</h1>
+
+    <section>
+      <h2>1. دالة search</h2>
+      <p>
+        تُستخدم للبحث داخل النصوص. ترجع موقع الكلمة إذا وُجدت، أو -1 إذا لم تُوجد.
+      </p>
+      <pre><code>
+const text = "أنا أحب التفاح";
+console.log(text.search("تفاح")); // 8
+      </code></pre>
+    </section>
+
+    <section>
+      <h2>2. دالة filter()</h2>
+      <p>
+        تُستخدم لتصفية عناصر المصفوفة بناءً على شرط معين.
+      </p>
+      <pre><code>
+const nums = [1, 2, 3, 4];
+const even = nums.filter(n => n % 2 === 0);
+console.log(even); // [2, 4]
+      </code></pre>
+    </section>
+
+    <section>
+      <h2>3. دالة reduce()</h2>
+      <p>
+        تُستخدم لتجميع البيانات داخل المصفوفة إلى قيمة واحدة.
+      </p>
+      <pre><code>
+const nums = [10, 20, 30];
+const sum = nums.reduce((acc, val) => acc + val, 0);
+console.log(sum); // 60
+      </code></pre>
+    </section>
+
+    <section>
+      <h2>4. دالة findIndex()</h2>
+      <p>
+        تُستخدم لإيجاد أول عنصر يحقق شرط معين، وترجع فهرسه.
+      </p>
+      <pre><code>
+const ages = [18, 20, 25];
+const index = ages.findIndex(age => age > 20);
+console.log(index); // 2
+      </code></pre>
+    </section>
+
+    <section>
+      <h2>5. دالة lastIndexOf()</h2>
+      <p>
+        تُستخدم لإيجاد آخر موقع لعنصر معين في المصفوفة.
+      </p>
+      <pre><code>
+const colors = ["red", "blue", "green", "blue"];
+const index = colors.lastIndexOf("blue");
+console.log(index); // 3
+      </code></pre>
+    </section>
+
+  </div>
+
+</body>
+</html>

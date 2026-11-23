@@ -1,0 +1,185 @@
+/* === Added by ChatGPT: vivid gradient background + centered spinner === */
+:root {
+  --grad-a: #1a73e8;
+  --grad-b: #8e2de2;
+  --grad-c: #f27121;
+}
+
+html, body {
+  height: 220px;
+}
+
+body.gradient-bg {
+  /* Vivid linear gradient background */
+  background: linear-gradient(135deg, var(--grad-a), var(--grad-b), var(--grad-c));
+  background-size: 200% 200%;
+  animation: bgShift 12s ease infinite;
+  margin: 0;
+}
+
+@keyframes bgShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Centered spinner wrapper */
+#spinner-overlay{
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  background: rgba(0,0,0,0.08); /* subtle veil to boost readability */
+}
+
+/* Spinner circle */
+.spinner {
+  width: 220px;
+  height: clamp(80px, 12vw, 140px);
+  border: clamp(6px, 1.2vw, 10px) solid rgba(255,255,255,0.35);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  position: relative;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+
+/* Text inside spinner */
+.spinner .spin-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  color: #111;
+  text-shadow: 0 1px 2px rgba(255,255,255,0.7);
+  padding: 6px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Utility: hide spinner when not needed */
+.hidden { display: none !important; }
+
+
+/* === Overrides: multicolor conic-gradient spinner that rotates (text rotates with it) === */
+.spinner {
+  width: 240px;              /* bigger */
+  height: 240px;
+  border: none;              /* remove old border-based spinner */
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Multicolor conic gradient forms the ring */
+  background: conic-gradient(
+    from 0deg,
+    #00d2ff,
+    #3a7bd5,
+    #8e2de2,
+    #f27121,
+    #00d2ff
+  );
+  /* Cut out the center to make a ring */
+  -webkit-mask: radial-gradient(farthest-side, transparent calc(50% - 14px), #000 calc(50% - 13px));
+          mask: radial-gradient(farthest-side, transparent calc(50% - 14px), #000 calc(50% - 13px));
+  border-radius: 50%;
+  animation: spin 0.9s linear infinite;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+
+.spinner .spin-text {
+  /* No counter-rotation: will rotate with the spinner */
+  font-weight: 800;
+  font-size: 22px;
+  color: #111;
+  text-shadow: 0 1px 2px rgba(255,255,255,0.7);
+}
+
+/* Optional: faster background motion by also shifting the gradient (kept simple via rotation) */
+
+
+/* === Overrides: brighter vivid spinner colors === */
+.spinner {
+  background: conic-gradient(
+    from 0deg,
+    #ff0000,
+    #ff7f00,
+    #ffff00,
+    #00ff00,
+    #00ffff,
+    #0000ff,
+    #8b00ff,
+    #ff0000
+  );
+}
+
+
+/* === Override: keep text fixed while ring spins === */
+.spinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.spinner .spin-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 22px;
+  color: #111;
+  text-shadow: 0 1px 2px rgba(255,255,255,0.7);
+  animation: none !important; /* stop rotating text */
+}
+
+
+/* === Pastel spinner ring + fixed centered text === */
+.spinner{
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background: conic-gradient(
+    #9bd1ff,
+    #c7a8ff,
+    #ffcc8a,
+    #fff2a6,
+    #b9f2d0,
+    #a8e4ff,
+    #9bd1ff
+  );
+  -webkit-mask: radial-gradient(farthest-side, transparent calc(50% - 14px), #000 calc(50% - 13px));
+          mask: radial-gradient(farthest-side, transparent calc(50% - 14px), #000 calc(50% - 13px));
+  animation: spin 1s linear infinite;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+#spinner-overlay .spin-text{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 800;
+  font-size: 26px;
+  color: #ffffff;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.45);
+  pointer-events: none;
+}
+
+
+/* === Thinner ring override === */
+.spinner{
+  -webkit-mask: radial-gradient(farthest-side, transparent calc(50% - 24px), #000 calc(50% - 23px));
+          mask: radial-gradient(farthest-side, transparent calc(50% - 24px), #000 calc(50% - 23px));
+}

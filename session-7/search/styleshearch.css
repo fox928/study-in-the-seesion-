@@ -1,0 +1,76 @@
+/* الخط العام والاتجاه */
+body {
+  font-family: 'Cairo', sans-serif;
+  direction: rtl;
+  background: linear-gradient(to left, #e0eafc, #cfdef3);
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+/* الحاوية الأساسية */
+.container {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 40px;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* العنوان الرئيسي */
+.container h1 {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 40px;
+  color: #003366;
+}
+
+/* العناوين الفرعية */
+.container h2 {
+  font-size: 24px;
+  color: #007acc;
+  margin-top: 40px;
+}
+
+/* الفقرات */
+.container p {
+  font-size: 18px;
+  line-height: 1.8;
+  margin: 15px 0;
+}
+
+/* الكود البرمجي */
+pre {
+  background-color: #f4f4f4;
+  padding: 20px;
+  border-left: 4px solid #007acc;
+  border-radius: 10px;
+  overflow-x: auto;
+  font-size: 16px;
+}
+
+code {
+  font-family: "Courier New", monospace;
+  color: #222;
+}
+
+/* روابط وأزرار مستقبلية */
+a, button {
+  transition: all 0.3s ease;
+}
+
+/* تخصيص الزر لو أضفنا */
+button {
+  padding: 10px 20px;
+  background-color: #007acc;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #005f99;
+}
